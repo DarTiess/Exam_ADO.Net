@@ -11,7 +11,9 @@
             <MenuItem Header="Категории вакансий"
                       x:Name="category"
                       Click="category_Click"></MenuItem>
-            <MenuItem Header="Поиск вакансий"></MenuItem>
+            <MenuItem Header="Поиск вакансий"
+                      x:Name="find"
+                      Click="find_Click"></MenuItem>
             <MenuItem Header="Настройки"></MenuItem>
         </Menu>
 

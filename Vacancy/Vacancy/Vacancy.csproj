@@ -72,6 +72,9 @@
     <Compile Include="Pages\CategoryList.xaml.cs">
       <DependentUpon>CategoryList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FindVac.xaml.cs">
+      <DependentUpon>FindVac.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vacancies.cs">
       <DependentUpon>Vacancys.tt</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CategoryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FindVac.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
