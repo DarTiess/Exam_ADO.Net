@@ -1,0 +1,27 @@
+﻿<Page x:Class="Vacancy.Pages.CategoryList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Vacancy.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="CategoryList">
+
+    <Grid>
+        <Label>
+            <ListView x:Name="ListCategory">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Category ID"
+                                        DisplayMemberBinding="{Binding Path=CategoryId}"></GridViewColumn>
+                        <GridViewColumn Header="Category Name"
+                                        DisplayMemberBinding="{Binding Path=CategoryName}"></GridViewColumn>
+                        <GridViewColumn Header="link to Category"
+                                        DisplayMemberBinding="{Binding Path=linkCategory}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Label>
+    </Grid>
+</Page>
