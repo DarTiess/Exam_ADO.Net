@@ -5,15 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Vacancy.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="300" d:DesignWidth="300" 
       Title="FindVac">
 
-    <Grid Background="LightSteelBlue">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="43*"></RowDefinition>
+            <RowDefinition Height="54*"></RowDefinition>
+            <RowDefinition Height="60*"></RowDefinition>
+            <RowDefinition Height="31*"></RowDefinition>
+            <RowDefinition Height="212*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -21,16 +22,34 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label TextElement.FontSize="20" Grid.ColumnSpan="2" HorizontalAlignment="Center"> Поиск Вакансии</Label>
-            <Label Grid.Row="1" Height="30" Margin="10">Категория</Label>
+        <Label TextElement.FontSize="20" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="121,0" Width="158">Поиск Вакансии</Label>
+        <Label Grid.Row="1" Margin="0,10,0,0">Категория</Label>
         <ComboBox Grid.Row="1"
-                  Grid.Column="1" x:Name="categoryName" Height="20" Width="100" DisplayMemberPath="CategoryName"></ComboBox>
+                  Grid.Column="1" x:Name="categoryName" DisplayMemberPath="CategoryName" Margin="10"/>
 
-        <Label Grid.Row="2" Height="30" Margin="10">Дата Публикации</Label>
-        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="pubdate" Height="20" Width="100" DisplayMemberPath="Vacancies.pubDate"></ComboBox>
-        
+        <Label Grid.Row="2" Margin="0,10" >Дата Публикации</Label>
+        <DatePicker Grid.Column="1" Grid.Row="2" x:Name="pubdate" Margin="10"/>
+
         <Button Grid.Row="3" x:Name="findVacancy"
-                Height="30" Width="70"
-                Click="findVacancy_Click">Find</Button>
+                Click="findVacancy_Click" Margin="75,0">Find</Button>
+
+        <Label Grid.Row="4" Grid.ColumnSpan="2">
+            <ListView x:Name="ListVacancy">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Vacancy ID"
+                                        DisplayMemberBinding="{Binding Path=VacancyId}"></GridViewColumn>
+                        <GridViewColumn Header="Vacancy Name"
+                                        DisplayMemberBinding="{Binding Path=VacancyName}"></GridViewColumn>
+                        <GridViewColumn Header="Description"
+                                        DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
+                        <GridViewColumn Header="publicaion Date"
+                                        DisplayMemberBinding="{Binding Path=pubDate}"></GridViewColumn>
+                        <GridViewColumn Header="Category Id"
+                                        DisplayMemberBinding="{Binding Path=CategodyId}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Label>
     </Grid>
 </Page>

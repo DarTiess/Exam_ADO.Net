@@ -19,5 +19,6 @@ namespace Vacancy
         public string Description { get; set; }
         public System.DateTime pubDate { get; set; }
         public int CategodyId { get; set; }
+        public virtual VacancyTable VacancyTable { get; set; }
     }
 }

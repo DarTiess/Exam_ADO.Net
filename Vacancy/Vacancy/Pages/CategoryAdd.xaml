@@ -20,15 +20,20 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Grid.ColumnSpan="2" HorizontalAlignment="Center"
-               TextElement.FontSize="20">Добавление категории</Label>
 
-        <Label Grid.Row="1" Margin="15">Название категории</Label>
+        <Image></Image>
+        <Label Grid.ColumnSpan="2" HorizontalAlignment="Center"
+               TextElement.FontSize="20"
+               TextElement.FontWeight="ExtraBold">Добавление категории</Label>
+
+        <Label Grid.Row="1" Margin="15"
+               TextElement.FontWeight="Bold">Название категории</Label>
         <TextBox Grid.Row="1" Grid.Column="1"
                  Margin="15"
                  x:Name="_nameCategory"></TextBox>
 
-        <Label Grid.Row="2" Margin="15">ссылка на категорию</Label>
+        <Label Grid.Row="2" Margin="15"
+               TextElement.FontWeight="Bold">ссылка на категорию</Label>
         <TextBox Grid.Row="2" Grid.Column="1"
                  Margin="15"
                  x:Name="_linkCategory"></TextBox>

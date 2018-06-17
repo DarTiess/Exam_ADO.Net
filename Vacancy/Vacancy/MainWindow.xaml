@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vacancy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600" ResizeMode="NoResize">
     <Grid>
         <Menu Height="30" VerticalAlignment="Top">
             <MenuItem Header="Категории вакансий"
@@ -14,9 +14,14 @@
             <MenuItem Header="Поиск вакансий"
                       x:Name="find"
                       Click="find_Click"></MenuItem>
-            <MenuItem Header="Настройки"></MenuItem>
+            <MenuItem Header="Настройки"
+                      x:Name="setting"
+                    >
+                <MenuItem Header="Статисчтическая информация"></MenuItem>
+                <MenuItem Header="Настройка базы данных"></MenuItem>
+            </MenuItem>
         </Menu>
-
+        <Image Source="E:\GitHub\Exam_ADO.Net\Vacancy\Vacancy\1.jpg"></Image>
         <Frame NavigationUIVisibility="Hidden" x:Name="CentralFrame"></Frame>
     </Grid>
 </Window>

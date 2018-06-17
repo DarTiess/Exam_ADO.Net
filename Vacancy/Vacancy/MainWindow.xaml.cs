@@ -41,5 +41,10 @@ namespace Vacancy
         {
             CentralFrame.Source = new Uri(@"Pages\FindVac.xaml", UriKind.RelativeOrAbsolute);
         }
+
+        private void setting_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

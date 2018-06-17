@@ -30,16 +30,15 @@ namespace Vacancy.Pages
             InitializeComponent();
           
             categoryName.ItemsSource = db.VacancyTableSet.ToList();
-          pubdate.ItemsSource = db.VacanciesSet.ToList();
-           
+       
+        
         }
 
         private void findVacancy_Click(object sender, RoutedEventArgs e)
         {
-           foreach(var item in db.VacanciesSet.ToList())
-            {
-
-            }
+            VacancyTable vc = db.VacancyTableSet.FirstOrDefault(f => f.CategoryName == categoryName.Text);
+                ListVacancy.ItemsSource = db.VacanciesSet.Where(w => w.pubDate >= (DateTime)pubdate.SelectedDate && w.CategodyId==vc.CategoryId).OrderByDescending(o => o.pubDate).ToList();
+            
         }
     }
 }

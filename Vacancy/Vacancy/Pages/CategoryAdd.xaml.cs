@@ -28,25 +28,25 @@ namespace Vacancy.Pages
         {
             InitializeComponent();
 
-                   
+
         }
 
-      
+
 
         private void SaveCategoty_Click(object sender, RoutedEventArgs e)
         {
             VacancyTable vc = new VacancyTable();
             try
             {
-             
-            vc.CategoryName = _nameCategory.Text;
-            vc.linkCategory = _linkCategory.Text;
-            db.VacancyTableSet.Add(vc);
-            db.SaveChanges();
-            MessageBox.Show("Категория добавлена");
+
+                vc.CategoryName = _nameCategory.Text;
+                vc.linkCategory = _linkCategory.Text;
+                db.VacancyTableSet.Add(vc);
+                db.SaveChanges();
+                MessageBox.Show("Категория добавлена");
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error!");
                 MessageBox.Show(ex.Message);
@@ -54,37 +54,38 @@ namespace Vacancy.Pages
             path = vc.linkCategory;
             XDocument doc = new XDocument();
 
-          while(true)
-            {
-                doc = XDocument.Load(path);
 
-                VacancyList = doc.Element("rss")
-                    .Element("channel")
-                    //.Element("link")
-                    .Elements()
-                    .Where(w => w.Name == "item")
-                    .Select(s =>
-                    new Vacancies
-                    {
+            doc = XDocument.Load(path);
 
-                        VacancyName = s.Element("title").Value,
-                        Description = s.Element("description").Value,
-                        pubDate = DateTime.Parse(s.Element("pubDate").Value),
-                         CategodyId = int.Parse(vc.CategoryId.ToString())
-                    }
+            VacancyList = doc.Element("rss")
+                .Element("channel")
+                //.Element("link")
+                .Elements()
+                .Where(w => w.Name == "item")
+                .Select(s =>
+                new Vacancies
+                {
 
-                    ).OrderByDescending(o => o.pubDate).ToList();
-                foreach(var item in VacancyList)
-               {
-                    db.VacanciesSet.Add(item);
+                    VacancyName = s.Element("title").Value,
+                    Description = s.Element("description").Value,
+                    pubDate = DateTime.Parse(s.Element("pubDate").Value),
+                    CategodyId = int.Parse(vc.CategoryId.ToString())
                 }
-                db.SaveChanges();
+
+                ).OrderByDescending(o => o.pubDate).ToList();
+            foreach (var item in VacancyList)
+            {
+                db.VacanciesSet.SkipWhile(s => s.pubDate > DateTime.Parse("2018-01-01"));
+                db.VacanciesSet.Add(item);
 
             }
-
-
-      MainWindow.fr.Source= new Uri(@"Pages\CategoryList.xaml", UriKind.RelativeOrAbsolute);
-
+            db.SaveChanges();
+            MainWindow.fr.Source = new Uri(@"Pages\CategoryList.xaml", UriKind.RelativeOrAbsolute);
         }
+
+
+        
+
+    
     }
 }
