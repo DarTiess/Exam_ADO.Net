@@ -68,7 +68,35 @@ namespace Vacancy.Pages
             entityBuilder.Metadata = @" metadata = res://*/Vacancys.csdl|res://*/Vacancys.ssdl|res://*/Vacancys.msl";
             MessageBox.Show( entityBuilder.ToString());
 
-            ConfigurationManager.RefreshSection("connectionStrings");
+
+
+
+            System.Configuration.Configuration config =
+                    ConfigurationManager.OpenExeConfiguration(
+                    ConfigurationUserLevel.None);
+
+
+            int connStrCnt =
+                ConfigurationManager.ConnectionStrings.Count;
+
+            string csName =
+                "VacancysContainer" + connStrCnt.ToString();
+
+
+            ConnectionStringSettings csSettings =
+                    new ConnectionStringSettings(csName,
+                    sqlBuilder.DataSource +
+                    sqlBuilder.InitialCatalog, entityBuilder.Provider);
+
+            ConnectionStringsSection csSection =
+                config.ConnectionStrings;
+
+           
+            csSection.ConnectionStrings.Add(csSettings);
+
+            config.Save(ConfigurationSaveMode.Modified);
+
+
         }
     }
 }

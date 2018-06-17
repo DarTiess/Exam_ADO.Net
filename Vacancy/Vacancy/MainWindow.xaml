@@ -21,16 +21,18 @@
                           Click="listCategory_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Поиск вакансий"
+          
                       x:Name="find"
                       Click="find_Click"></MenuItem>
+          
             <MenuItem Header="Настройки"
-                      x:Name="setting"
-                      Click="setting_Click"
                     >
                 <MenuItem Header="Статистическая информация"
                           x:Name="statistic"
                           Click="statistic_Click"></MenuItem>
-                <MenuItem Header="Настройка базы данных"></MenuItem>
+                <MenuItem Header="Настройка базы данных"
+                         x:Name="setting"
+                      Click="setting_Click" ></MenuItem>
             </MenuItem>
         </Menu>
 
