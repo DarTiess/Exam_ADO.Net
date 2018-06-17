@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Vacancy.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ListVac.xaml
+    /// Логика взаимодействия для SettingPage.xaml
     /// </summary>
-    public partial class ListVac : Page
+    public partial class SettingPage : Page
     {
-        public ListVac()
+        public SettingPage()
         {
             InitializeComponent();
         }

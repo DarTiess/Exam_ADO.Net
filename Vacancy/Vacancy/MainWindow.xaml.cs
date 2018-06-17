@@ -44,7 +44,17 @@ namespace Vacancy
 
         private void setting_Click(object sender, RoutedEventArgs e)
         {
+          
+        }
 
+        private void statistic_Click(object sender, RoutedEventArgs e)
+        {
+            CentralFrame.Source = new Uri(@"Pages\StatisticPage.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void listCategory_Click(object sender, RoutedEventArgs e)
+        {
+            CentralFrame.Source = new Uri(@"Pages\CategoryList.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }

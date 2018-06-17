@@ -75,8 +75,11 @@
     <Compile Include="Pages\FindVac.xaml.cs">
       <DependentUpon>FindVac.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ListVac.xaml.cs">
-      <DependentUpon>ListVac.xaml</DependentUpon>
+    <Compile Include="Pages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StatisticPage.xaml.cs">
+      <DependentUpon>StatisticPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vacancies.cs">
       <DependentUpon>Vacancys.tt</DependentUpon>
@@ -123,7 +126,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ListVac.xaml">
+    <Page Include="Pages\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StatisticPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

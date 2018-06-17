@@ -7,21 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="600" ResizeMode="NoResize">
     <Grid>
-        <Menu Height="30" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"></RowDefinition>
+            <RowDefinition Height="449*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Height="30" VerticalAlignment="Top" Grid.RowSpan="2">
             <MenuItem Header="Категории вакансий"
-                      x:Name="category"
+                     >
+                <MenuItem Header="Добавить категорию" x:Name="category"
                       Click="category_Click"></MenuItem>
+                <MenuItem Header="Список Категорий"
+                          x:Name="listCategory"
+                          Click="listCategory_Click"></MenuItem>
+            </MenuItem>
             <MenuItem Header="Поиск вакансий"
                       x:Name="find"
                       Click="find_Click"></MenuItem>
             <MenuItem Header="Настройки"
                       x:Name="setting"
                     >
-                <MenuItem Header="Статисчтическая информация"></MenuItem>
+                <MenuItem Header="Статистическая информация"
+                          x:Name="statistic"
+                          Click="statistic_Click"></MenuItem>
                 <MenuItem Header="Настройка базы данных"></MenuItem>
             </MenuItem>
         </Menu>
-        <Image Source="E:\GitHub\Exam_ADO.Net\Vacancy\Vacancy\1.jpg"></Image>
-        <Frame NavigationUIVisibility="Hidden" x:Name="CentralFrame"></Frame>
+
+
+        <Image Grid.Row="1" Source="E:\GitHub\Exam_ADO.Net\Vacancy\Vacancy\1.jpg"></Image>
+        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" x:Name="CentralFrame"></Frame>
     </Grid>
 </Window>
