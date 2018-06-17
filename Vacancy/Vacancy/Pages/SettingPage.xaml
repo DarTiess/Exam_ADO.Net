@@ -9,6 +9,63 @@
       Title="SettingPage">
 
     <Grid>
-        
+        <Grid Height="300" Background="PapayaWhip">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.ColumnSpan="3"
+               HorizontalAlignment="Center"
+                TextElement.FontWeight="UltraBold"
+                   Height="25"
+                   >Настройка базы данных</Label>
+
+        <Label Grid.Row="1">1.	Сервер базы данных</Label>
+        <Label Grid.Row="2">2.	Название базы данных</Label>
+        <Label Grid.Row="3">3.	Имя пользователя</Label>
+        <Label Grid.Row="4">4.	Пароль пользователя</Label>
+
+            <TextBlock Grid.Row="1" Grid.Column="1"
+                       Margin="10"
+                       x:Name="Server"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" 
+                       Margin="10"
+                       x:Name="DBName"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1"
+                       Margin="10"
+                       x:Name="UserName"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1"
+                       Margin="10"
+                       x:Name="UserPass"></TextBlock>
+
+            <TextBox Grid.Row="1" Grid.Column="2"
+                       Margin="10"
+                     x:Name="_server"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="2" 
+                       Margin="10"
+                     x:Name="_dbName"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="2"
+                       Margin="10"
+                     x:Name="_userName"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="2"
+                       Margin="10"
+                     x:Name="_passUser"></TextBox>
+
+            <Button Grid.Row="5"
+                    Grid.Column="2" Height="30" Width="50"
+                    x:Name="editPage"
+                    Click="editPage_Click">Edit</Button>
+        </Grid>
     </Grid>
 </Page>

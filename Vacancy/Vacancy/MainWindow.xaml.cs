@@ -44,7 +44,8 @@ namespace Vacancy
 
         private void setting_Click(object sender, RoutedEventArgs e)
         {
-          
+            CentralFrame.Source = new Uri(@"Pages\SettingPage.xaml", UriKind.RelativeOrAbsolute);
+
         }
 
         private void statistic_Click(object sender, RoutedEventArgs e)

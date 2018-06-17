@@ -25,6 +25,7 @@
                       Click="find_Click"></MenuItem>
             <MenuItem Header="Настройки"
                       x:Name="setting"
+                      Click="setting_Click"
                     >
                 <MenuItem Header="Статистическая информация"
                           x:Name="statistic"
